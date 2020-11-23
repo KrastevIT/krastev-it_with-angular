@@ -13,7 +13,10 @@ import { HomeComponent } from './home/home.component';
     HomeComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot([
+      {path: '', component: HomeComponent}
+    ])
   ],
   providers: [],
   bootstrap: [AppComponent]
