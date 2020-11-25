@@ -1,0 +1,26 @@
+.extra-header {
+    text-align: center;
+    opacity: 0;
+}
+
+.extra-header img:hover {
+    transform: rotate(180deg);
+    transition: 5s;
+}
+
+.extra-header h3 {
+    font-size: 16px;
+}
+
+.extra-header span {
+    color: #ffbd39;
+}
+
+.extra-header button {
+    margin: 0% auto;
+}
+
+hr {
+    width: 50%;
+    margin-top: 40px;
+}
