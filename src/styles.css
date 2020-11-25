@@ -45,3 +45,19 @@ body {
     transform: translateY(-3px);
     box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
 }
+
+.fa::before {
+    content: '';
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    background-repeat: no-repeat;
+}
+
+.fa-bars::before {
+    background-image: url(/assets/icons/bars-solid.svg);
+}
+
+.fa-times::before {
+    background-image: url(/assets/icons/times-solid.svg);
+}

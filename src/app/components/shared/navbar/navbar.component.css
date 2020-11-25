@@ -17,3 +17,33 @@
     margin: 0px 12px;
     color: #4F5C6B;
 }
+
+.fa-bars,
+.fa-times {
+    display: none;
+    position: absolute;
+    left: 20px;
+}
+
+@media(max-width: 860px) {
+    .navigation-basic {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+    }
+    .navigation-basic .page-wrapper {
+        flex-direction: column;
+    }
+    .navigation-basic .page-wrapper a {
+        margin: 10px 0px;
+    }
+    .navigation-basic .auth-wrapper {
+        margin: 10px 12px;
+    }
+    .fa-bars,
+    .fa-times {
+        display: block;
+        left: 30px;
+        top: 20px;
+    }
+}
