@@ -7,7 +7,7 @@ import { trigger, state, animate, transition, style, keyframes } from '@angular/
   styleUrls: ['./header.component.css'],
   animations: [
     trigger('title-animate', [
-      state('true', style({ transform: 'translateY(-109px)', opacity: 1 })),
+      state('true', style({ transform: ' translateY(50px)', opacity: 1 })),
       transition('* <=> *', animate(3000))
     ])
   ]
