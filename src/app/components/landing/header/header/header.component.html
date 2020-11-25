@@ -1,7 +1,9 @@
 <section class="basic-title">
-    <article class="text-wrapper">
-        <span class="text-strong">Здравей</span>
-        <h1>Аз съм <span class="text-strong">Кристиян Кръстев</span></h1>
-        <p>И съм <span class="text-strong">Софтуерен</span> Инженер</p>
+    <article [@title-animate]="isOpen" (@title-animate.done)="onDone()" class="text-wrapper">
+        <span>Здравей</span>
+        <h1>Аз съм <span>Кристиян Кръстев</span></h1>
+        <p>И съм <span>Софтуерен</span> Инженер</p>
+        <p>Моите страсти са <span>C#</span> и <span>JavaScript</span></p>
+        <button class="btn">Научи повече за мен</button>
     </article>
 </section>

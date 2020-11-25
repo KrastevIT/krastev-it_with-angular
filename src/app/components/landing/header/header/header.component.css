@@ -12,9 +12,10 @@
 
 .basic-title .text-wrapper {
     padding-left: 150px;
+    opacity: 0;
 }
 
-.basic-title .text-strong {
+.basic-title span {
     color: #ffbd39;
 }
 
@@ -25,4 +26,8 @@
 
 .basic-title p {
     font-size: 28px;
+}
+
+.basic-title button {
+    margin: 0% auto;
 }
