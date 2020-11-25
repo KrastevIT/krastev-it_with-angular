@@ -1,6 +1,6 @@
 <i (click)="showMenu(nav, $event)" class="fa fa-bars"></i>
 
-<nav #nav class="navigation-basic">
+<nav [@nav-animate]=isOpen #nav class="navigation-basic">
     <article class="page-wrapper">
         <a class="nav-logo btn-nav" routerLink="/home"><strong>Krastev </strong> IT</a>
         <a class="btn-nav" routerLink="/home">Начало</a>

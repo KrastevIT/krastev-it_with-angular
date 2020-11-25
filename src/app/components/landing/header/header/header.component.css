@@ -5,9 +5,8 @@
     background-repeat: no-repeat;
     display: flex;
     align-items: center;
-    margin: 22px 0px;
     background-size: 39%;
-    padding: 0px 50px;
+    padding: 60px 50px;
 }
 
 .basic-title .text-wrapper {
