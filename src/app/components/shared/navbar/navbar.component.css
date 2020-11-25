@@ -31,6 +31,9 @@
         flex-direction: column;
         align-items: center;
     }
+    .navigation-basic a {
+        align-self: center;
+    }
     .navigation-basic .page-wrapper {
         flex-direction: column;
     }
