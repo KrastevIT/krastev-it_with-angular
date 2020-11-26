@@ -1,4 +1,6 @@
 .navigation-basic {
+    position: sticky;
+    top: 0px;
     display: flex;
     justify-content: space-between;
     background: #FBFBFB;
@@ -34,6 +36,7 @@
         align-items: center;
         position: relative;
         bottom: 400px;
+        top: initial;
     }
     .navigation-basic a {
         align-self: center;
