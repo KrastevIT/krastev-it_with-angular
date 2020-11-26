@@ -1,11 +1,6 @@
 .basic-title {
-    background-image: url(/assets/img/title-img.png);
-    background-position: right;
-    background-position-y: top;
-    background-repeat: no-repeat;
     display: flex;
-    align-items: center;
-    background-size: 39%;
+    justify-content: center;
     padding: 60px 50px;
 }
 
@@ -25,12 +20,14 @@
 
 .basic-title p {
     font-size: 28px;
+    text-align: center;
 }
 
 @media(max-width: 860px) {
     .basic-title {
-        background-image: none;
-        justify-content: center;
+        text-align: center;
+        padding: 60px 0px;
+        margin: 0px 10px;
     }
     .basic-title .text-wrapper {
         margin: 0px;

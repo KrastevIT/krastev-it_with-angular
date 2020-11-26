@@ -9,6 +9,7 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { HeaderComponent } from './components/landing/header/header/header.component';
 import { HomePageComponent } from './components/landing/home-page/home-page/home-page.component';
 import { ExtraHeaderComponent } from './components/landing/header/extra-header/extra-header/extra-header.component';
+import { SkillsPageComponent } from './components/skills/skills-page/skills-page.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +17,15 @@ import { ExtraHeaderComponent } from './components/landing/header/extra-header/e
     HomePageComponent,
     NavbarComponent,
     HeaderComponent,
-    ExtraHeaderComponent
+    ExtraHeaderComponent,
+    SkillsPageComponent
   ],
   imports: [
     BrowserModule,
     RouterModule.forRoot([
       {path: '', component: HomePageComponent},
       {path: 'home', component: HomePageComponent},
+      {path: 'skills', component: SkillsPageComponent},
     ]),
     FormsModule,
     BrowserAnimationsModule
