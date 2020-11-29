@@ -18,8 +18,7 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   showMenu(nav: any, event: any) {
     if (this.isShow) {
