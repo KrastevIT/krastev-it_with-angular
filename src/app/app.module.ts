@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import {RouterModule, Route} from '@angular/router';
 import {ReactiveFormsModule} from '@angular/forms';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
@@ -35,7 +36,8 @@ import { AuthService } from './services/auth.service';
       {path: 'login', component: LoginComponent}
     ]),
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    HttpClientModule
   ],
   providers: [AuthService],
   bootstrap: [AppComponent]

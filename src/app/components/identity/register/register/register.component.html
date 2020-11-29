@@ -1,12 +1,22 @@
-<form [formGroup]="registerForm" (ngSubmit)="register()">
-    <label for="username">Потребителско Име</label>
-    <input id="username" type="text">
+<section class="register-wrapper">
+    <article class="card-register">
+        <h1>Регистрация</h1>
+        <form [formGroup]="registerForm" (ngSubmit)="register()">
+            <div class="form-group">
+                <input type="text" formControlName="username" placeholder="Потребителско Име">
+                <hr>
+            </div>
+            <div class="form-group">
+                <input type="text" formControlName="email" placeholder="Имейл Адрес">
+                <hr>
+            </div>
 
-    <label for="email">Имейл Адрес</label>
-    <input id="email" type="text">
+            <div class="form-group">
+                <input type="password" formControlName="password" placeholder="Парола">
+                <hr>
+            </div>
 
-    <label for="password">Парола</label>
-    <input id="password" type="password">
-
-    <button type="submit">Регистрация</button>
-</form>
+            <button class="btn" type="submit">Регистрация</button>
+        </form>
+    </article>
+</section>
