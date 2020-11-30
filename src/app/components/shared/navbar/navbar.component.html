@@ -7,8 +7,11 @@
         <a class="btn-nav" routerLink="/skills">Умения</a>
         <a class="btn-nav" routerLink="/education">Обучения</a>
     </article>
-    <article class="auth-wrapper">
+    <article *ngIf="!authService.isLoggedIn()" class="auth-wrapper">
         <a class="btn-nav" routerLink="/login">Вход</a>
         <a class="btn-nav" routerLink="/register">Регистрация</a>
+    </article>
+    <article *ngIf="authService.isLoggedIn()" class="auth-wrapper">
+        <a class="btn-nav" (click)="logout()" routerLink="/home">Излез</a>
     </article>
 </nav>

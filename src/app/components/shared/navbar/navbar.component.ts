@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, state, animate, transition, style } from '@angular/animations'
+import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -16,9 +17,13 @@ export class NavbarComponent implements OnInit {
   isShow: boolean = false;
   isOpen = false;
 
-  constructor() { }
+  constructor(private authService: AuthService) { }
 
   ngOnInit(): void {}
+
+  logout() {
+    this.authService.removeToken();
+  }
 
   showMenu(nav: any, event: any) {
     if (this.isShow) {
