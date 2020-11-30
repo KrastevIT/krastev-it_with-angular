@@ -10,7 +10,7 @@ import { AuthService } from 'src/app/services/auth.service';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor(private fb: FormBuilder, private authService: AuthService) { 
+  constructor(private fb: FormBuilder, private authService: AuthService) {
     this.loginForm = this.fb.group({
       'username': [''],
       'password': ['']
@@ -22,9 +22,10 @@ export class LoginComponent implements OnInit {
 
   login() {
     this.authService.login(this.loginForm.value)
-    .subscribe(token => {
-      console.log(token);
-    });
+      .subscribe(data => {
+        this.authService.saveToken(data.token);
+      },
+        e => console.log(e));
   }
 
 }
