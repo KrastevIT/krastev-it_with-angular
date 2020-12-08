@@ -1,0 +1,36 @@
+<section class="create-site-form-wrapper">
+    <article class="card-form">
+        <h1>Попълнете Вашето задание и ще Ви изпратим предложение!</h1>
+        <form [formGroup]="createSiteForm" (ngSubmit)="send()">
+
+            <div class="form-group">
+                <select formControlName="category" class="category-wrapper" id="category">
+                    <option value="default" [selected]="true">Моля изберете категория</option>
+                    <option value="Онлайн магазин">Онлайн магазин</option>
+                    <option value="Фирмен уеб сайт">Фирмен уеб сайт</option>
+                    <option value="Личен уеб сайт">Личен уеб сайт</option>
+                    <option value="Една страница уеб сайт">Една страница уеб сайт</option>
+                    <option value="Друго">Друго</option>
+                  </select>
+                <hr>
+            </div>
+
+            <div class="form-group">
+                <input type="text" formControlName="name" placeholder="Вашето име">
+                <hr>
+            </div>
+
+            <div class="form-group">
+                <input type="email" formControlName="email" placeholder="Имейл@gmail.com">
+                <hr>
+            </div>
+
+            <div class="form-group">
+                <textarea placeholder="Структура и съдържание. Желани категории и страници" formControlName="description" id="description"></textarea>
+                <hr>
+            </div>
+
+            <button class="btn" type="submit">Изпрати</button>
+        </form>
+    </article>
+</section>

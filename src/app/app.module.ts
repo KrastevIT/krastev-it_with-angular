@@ -17,6 +17,7 @@ import { AuthService } from './services/auth.service';
 import { CreateSitePageComponent } from './components/landing/create-site-page/create-site-page/create-site-page.component';
 import { CreateSiteHeaderComponent } from './components/landing/create-site-page/create-site-header/create-site-header.component';
 import { CreateSiteBenefitComponent } from './components/landing/create-site-page/create-site-benefit/create-site-benefit.component';
+import { CreateSiteFormComponent } from './components/landing/create-site-page/create-site-form/create-site-form.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { CreateSiteBenefitComponent } from './components/landing/create-site-pag
     LoginComponent,
     CreateSitePageComponent,
     CreateSiteHeaderComponent,
-    CreateSiteBenefitComponent
+    CreateSiteBenefitComponent,
+    CreateSiteFormComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { CreateSiteBenefitComponent } from './components/landing/create-site-pag
       {path: 'skills', component: SkillsPageComponent},
       {path: 'register', component: RegisterComponent},
       {path: 'login', component: LoginComponent},
-      {path: 'create-site', component: CreateSitePageComponent}
+      {path: 'create-site', component: CreateSitePageComponent},
+      {path: 'create-site-form', component: CreateSiteFormComponent}
     ]),
     ReactiveFormsModule,
     BrowserAnimationsModule,
