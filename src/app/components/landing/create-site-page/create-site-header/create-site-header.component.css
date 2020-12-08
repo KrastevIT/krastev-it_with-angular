@@ -4,6 +4,8 @@
     justify-content: center;
     text-align: center;
     margin-top: 50px;
+    border-radius: 10px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.1) 100%);
 }
 
 .create-site-wrapper .create-site-name-wrapper {
@@ -14,6 +16,7 @@
 .create-site-wrapper .content-wrapper {
     flex-basis: 33%;
     max-width: 22%;
+    margin: 0px 20px;
 }
 
 .create-site-wrapper i {
