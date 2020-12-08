@@ -16,6 +16,7 @@ import { LoginComponent } from './components/identity/register/login/login.compo
 import { AuthService } from './services/auth.service';
 import { CreateSitePageComponent } from './components/landing/create-site-page/create-site-page/create-site-page.component';
 import { CreateSiteHeaderComponent } from './components/landing/create-site-page/create-site-header/create-site-header.component';
+import { CreateSiteBenefitComponent } from './components/landing/create-site-page/create-site-benefit/create-site-benefit.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { CreateSiteHeaderComponent } from './components/landing/create-site-page
     RegisterComponent,
     LoginComponent,
     CreateSitePageComponent,
-    CreateSiteHeaderComponent
+    CreateSiteHeaderComponent,
+    CreateSiteBenefitComponent
   ],
   imports: [
     BrowserModule,
