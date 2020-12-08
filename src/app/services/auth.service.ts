@@ -21,10 +21,10 @@ export class AuthService {
   }
 
   isLoggedIn() {
-   return this.getToken() ? true : false;
+    return this.getToken() ? true : false;
   }
 
-  saveToken(token: string) {
+  setToken(token: string) {
     localStorage.setItem('token', token);
   }
 
@@ -34,5 +34,13 @@ export class AuthService {
 
   removeToken() {
     localStorage.clear();
+  }
+
+  setUsername(username: string) {
+    localStorage.setItem('username', username);
+  }
+
+  getUsername() {
+    return localStorage.getItem('username');
   }
 }

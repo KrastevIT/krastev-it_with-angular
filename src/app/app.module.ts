@@ -14,6 +14,8 @@ import { SkillsPageComponent } from './components/skills/skills-page/skills-page
 import { RegisterComponent } from './components/identity/register/register/register.component';
 import { LoginComponent } from './components/identity/register/login/login.component';
 import { AuthService } from './services/auth.service';
+import { CreateSitePageComponent } from './components/landing/create-site-page/create-site-page/create-site-page.component';
+import { CreateSiteHeaderComponent } from './components/landing/create-site-page/create-site-header/create-site-header.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { AuthService } from './services/auth.service';
     ExtraHeaderComponent,
     SkillsPageComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    CreateSitePageComponent,
+    CreateSiteHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +37,8 @@ import { AuthService } from './services/auth.service';
       {path: 'home', component: HomePageComponent},
       {path: 'skills', component: SkillsPageComponent},
       {path: 'register', component: RegisterComponent},
-      {path: 'login', component: LoginComponent}
+      {path: 'login', component: LoginComponent},
+      {path: 'create-site', component: CreateSitePageComponent}
     ]),
     ReactiveFormsModule,
     BrowserAnimationsModule,

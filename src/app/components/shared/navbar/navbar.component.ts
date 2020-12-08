@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { trigger, state, animate, transition, style } from '@angular/animations'
 import { AuthService } from 'src/app/services/auth.service';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-navbar',
@@ -8,7 +9,7 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./navbar.component.css'],
   animations: [
     trigger('nav-animate', [
-      state('true', style({ transform: ' translateY(400px)'})),
+      state('true', style({ transform: ' translateY(400px)' })),
       transition('* <=> *', animate(500))
     ])
   ]
@@ -16,10 +17,15 @@ import { AuthService } from 'src/app/services/auth.service';
 export class NavbarComponent implements OnInit {
   isShow: boolean = false;
   isOpen = false;
+  userName: any
 
   constructor(private authService: AuthService) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void { }
+
+  getUsername() {
+    return this.userName = this.authService.getUsername();
+  }
 
   logout() {
     this.authService.removeToken();

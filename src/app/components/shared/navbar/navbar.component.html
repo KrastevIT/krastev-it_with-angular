@@ -6,12 +6,14 @@
         <a class="btn-nav" routerLink="/home">Начало</a>
         <a class="btn-nav" routerLink="/skills">Умения</a>
         <a class="btn-nav" routerLink="/education">Обучения</a>
+        <a class="btn-nav" routerLink="/create-site">Изработка на сайт</a>
     </article>
-    <article *ngIf="!authService.isLoggedIn()" class="auth-wrapper">
+    <article *ngIf="!getUsername()" class="auth-wrapper">
         <a class="btn-nav" routerLink="/login">Вход</a>
         <a class="btn-nav" routerLink="/register">Регистрация</a>
     </article>
-    <article *ngIf="authService.isLoggedIn()" class="auth-wrapper">
+    <article *ngIf="getUsername()" class="auth-wrapper">
+        <span>Здравей, {{userName}}!</span>
         <a class="btn-nav" (click)="logout()" routerLink="/home">Излез</a>
     </article>
 </nav>

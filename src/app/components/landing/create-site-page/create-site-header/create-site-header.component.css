@@ -1,0 +1,38 @@
+.create-site-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+    margin-top: 50px;
+}
+
+.create-site-wrapper .create-site-name-wrapper {
+    flex-basis: 100%;
+    margin-bottom: 35px;
+}
+
+.create-site-wrapper .content-wrapper {
+    flex-basis: 33%;
+    max-width: 22%;
+}
+
+.create-site-wrapper i {
+    background-color: transparent;
+    border-radius: 20px;
+    border-color: darkcyan;
+    border-width: 1px;
+    border-style: solid;
+    padding: 20px;
+    color: darkcyan;
+}
+
+@media(max-width: 860px) {
+    .create-site-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+    .create-site-wrapper .content-wrapper {
+        margin: 0px 5px;
+        max-width: none;
+    }
+}
