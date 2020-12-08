@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
+import { CreateSiteService } from 'src/app/services/create-site.service';
 
 @Component({
   selector: 'app-create-site-form',
@@ -9,7 +11,10 @@ import { FormBuilder, FormGroup } from '@angular/forms';
 export class CreateSiteFormComponent implements OnInit {
   createSiteForm: FormGroup;
 
-  constructor(private fb: FormBuilder) {
+  constructor(
+    private fb: FormBuilder, 
+    private siteService: CreateSiteService,
+    private router: Router) {
     this.createSiteForm = this.fb.group({
       'category': '',
       'name': '',
@@ -22,7 +27,11 @@ export class CreateSiteFormComponent implements OnInit {
   }
 
   send() {
-    console.log(this.createSiteForm.value);
+    this.siteService.post(this.createSiteForm.value)
+    .subscribe(result => {
+      console.log(result);
+      this.router.navigateByUrl('/home');
+    });
   }
 
 }

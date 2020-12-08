@@ -1,9 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {RouterModule, Route} from '@angular/router';
-import {ReactiveFormsModule} from '@angular/forms';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {HttpClientModule} from '@angular/common/http'
+import { RouterModule, Route } from '@angular/router';
+import { ReactiveFormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
@@ -18,6 +18,7 @@ import { CreateSitePageComponent } from './components/landing/create-site-page/c
 import { CreateSiteHeaderComponent } from './components/landing/create-site-page/create-site-header/create-site-header.component';
 import { CreateSiteBenefitComponent } from './components/landing/create-site-page/create-site-benefit/create-site-benefit.component';
 import { CreateSiteFormComponent } from './components/landing/create-site-page/create-site-form/create-site-form.component';
+import { CreateSiteService } from './services/create-site.service';
 
 @NgModule({
   declarations: [
@@ -37,19 +38,19 @@ import { CreateSiteFormComponent } from './components/landing/create-site-page/c
   imports: [
     BrowserModule,
     RouterModule.forRoot([
-      {path: '', component: HomePageComponent},
-      {path: 'home', component: HomePageComponent},
-      {path: 'skills', component: SkillsPageComponent},
-      {path: 'register', component: RegisterComponent},
-      {path: 'login', component: LoginComponent},
-      {path: 'create-site', component: CreateSitePageComponent},
-      {path: 'create-site-form', component: CreateSiteFormComponent}
+      { path: '', component: HomePageComponent },
+      { path: 'home', component: HomePageComponent },
+      { path: 'skills', component: SkillsPageComponent },
+      { path: 'register', component: RegisterComponent },
+      { path: 'login', component: LoginComponent },
+      { path: 'create-site', component: CreateSitePageComponent },
+      { path: 'create-site-form', component: CreateSiteFormComponent }
     ]),
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, CreateSiteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
