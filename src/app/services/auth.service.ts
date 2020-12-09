@@ -13,12 +13,18 @@ export class AuthService {
   private loginPath = environment.apiUrl + 'identity/login'
   private registerPath = environment.apiUrl + 'identity/register'
 
+  private updateUser = environment.apiUrl + 'identity/UpdateUser'
+
   login(data: any): Observable<any> {
     return this.http.post(this.loginPath, data);
   }
 
   register(data: any): Observable<any> {
     return this.http.post(this.registerPath, data);
+  }
+
+  changeUserPassword(data: any): Observable<any> {
+    return this.http.post(this.updateUser, data);
   }
 
   isLoggedIn() {

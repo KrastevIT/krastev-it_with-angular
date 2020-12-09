@@ -15,7 +15,7 @@
         <a class="btn-nav" routerLink="/register">Регистрация</a>
     </article>
     <article *ngIf="getUsername()" class="auth-wrapper">
-        <span>Здравей, {{userName}}!</span>
+        <a routerLink="/profile"><span>Здравей, </span>{{userName}}!</a>
         <a class="btn-nav" (click)="logout()" routerLink="/home">Излез</a>
     </article>
 </nav>

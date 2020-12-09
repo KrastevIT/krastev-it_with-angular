@@ -1,0 +1,28 @@
+<section class="profile-wrapper">
+    <article class="card-wrapper">
+        <img src="https://image.freepik.com/free-vector/employees-cv-candidates-resume-corporate-workers-students-id-isolate-flat-design-element-job-applications-avatars-personal-information_335657-145.jpg">
+        <hr>
+        <h3>Потребителски данни</h3>
+        <form [formGroup]="profileForm" (ngSubmit)="edit()">
+            <div class="form-group">
+                <input type="text" formControlName="username" disabled placeholder="Потребителско Име">
+                <hr>
+            </div>
+            <div class="form-group">
+                <input type="password" formControlName="password" placeholder="Парола">
+                <hr>
+            </div>
+            <div class="form-group">
+                <input type="password" formControlName="newPassword" placeholder="Нова Парола">
+                <hr>
+            </div>
+            <div class="form-group">
+                <input type="password" formControlName="confirmationPassword" placeholder="Потвърди Паролата">
+                <hr>
+            </div>
+            <article class="btn-wrapper">
+                <button class="btn" type="submit">Редактирай</button>
+            </article>
+        </form>
+    </article>
+</section>

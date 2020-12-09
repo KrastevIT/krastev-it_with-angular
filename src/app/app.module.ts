@@ -20,6 +20,7 @@ import { LoginComponent } from './components/identity/login/login.component';
 import { HeaderComponent } from './components/landing/home-page/header/header.component';
 import { ExtraHeaderComponent } from './components/landing/home-page/extra-header/extra-header.component';
 import { SkillsPageComponent } from './components/landing/skills-page/skills-page.component';
+import { ProfileComponent } from './components/identity/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,8 @@ import { SkillsPageComponent } from './components/landing/skills-page/skills-pag
     CreateSitePageComponent,
     CreateSiteHeaderComponent,
     CreateSiteBenefitComponent,
-    CreateSiteFormComponent
+    CreateSiteFormComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -44,6 +46,7 @@ import { SkillsPageComponent } from './components/landing/skills-page/skills-pag
       { path: 'skills', component: SkillsPageComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
+      { path: 'profile', component: ProfileComponent },
       { path: 'create-site', component: CreateSitePageComponent },
       { path: 'create-site-form', component: CreateSiteFormComponent, canActivate: [AuthGuardService] }
     ]),
