@@ -49,7 +49,7 @@ import { ProfileComponent } from './components/identity/profile/profile.componen
       { path: 'profile', component: ProfileComponent },
       { path: 'create-site', component: CreateSitePageComponent },
       { path: 'create-site-form', component: CreateSiteFormComponent, canActivate: [AuthGuardService] }
-    ]),
+    ], { scrollPositionRestoration: 'enabled' }),
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule
