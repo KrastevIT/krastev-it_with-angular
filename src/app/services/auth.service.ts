@@ -7,6 +7,7 @@ import { environment } from '../../environments/environment';
   providedIn: 'root'
 })
 export class AuthService {
+  urlGuard: string = '';
 
   constructor(private http: HttpClient) { }
   private loginPath = environment.apiUrl + 'identity/login'
@@ -42,5 +43,15 @@ export class AuthService {
 
   getUsername() {
     return localStorage.getItem('username');
+  }
+
+  setUrlGuard(url: string) {
+    this.urlGuard = url;
+  }
+
+  getUrlGuard() {
+    let url = this.urlGuard;
+    this.urlGuard = '';
+    return url;
   }
 }

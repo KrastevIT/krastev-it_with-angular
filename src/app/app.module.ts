@@ -19,6 +19,7 @@ import { CreateSiteHeaderComponent } from './components/landing/create-site-page
 import { CreateSiteBenefitComponent } from './components/landing/create-site-page/create-site-benefit/create-site-benefit.component';
 import { CreateSiteFormComponent } from './components/landing/create-site-page/create-site-form/create-site-form.component';
 import { CreateSiteService } from './services/create-site.service';
+import { AuthGuardService } from './services/auth-guard.service';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,7 @@ import { CreateSiteService } from './services/create-site.service';
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
       { path: 'create-site', component: CreateSitePageComponent },
-      { path: 'create-site-form', component: CreateSiteFormComponent }
+      { path: 'create-site-form', component: CreateSiteFormComponent, canActivate: [AuthGuardService] }
     ]),
     ReactiveFormsModule,
     BrowserAnimationsModule,

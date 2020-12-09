@@ -4,6 +4,7 @@
     justify-content: center;
     text-align: center;
     margin: 50px 0px;
+    min-height: 100vh;
 }
 
 .create-site-wrapper .create-site-name-wrapper {
@@ -27,8 +28,13 @@
     color: darkcyan;
 }
 
-.arrow-wrapper {
-    text-align: center;
+.create-site-wrapper .arrow-wrapper {
+    flex-basis: 100%;
+    margin-bottom: 50px;
+}
+
+.create-site-wrapper .arrow-wrapper i {
+    border-style: none;
     font-size: 50px;
     color: darkred;
 }

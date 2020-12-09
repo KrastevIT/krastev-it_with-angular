@@ -12,7 +12,7 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private authService: AuthService,
     private router: Router) {
     this.loginForm = this.fb.group({
@@ -25,11 +25,17 @@ export class LoginComponent implements OnInit {
   }
 
   login() {
+
+    let navigateUrl = this.authService.getUrlGuard();
+
     this.authService.login(this.loginForm.value)
       .subscribe(data => {
         this.authService.setToken(data.token);
         this.authService.setUsername(data.username);
-        this.router.navigateByUrl('/home');
+
+        navigateUrl
+          ? this.router.navigateByUrl(navigateUrl)
+          : this.router.navigateByUrl('/home');
       },
         e => console.log(e));
   }
