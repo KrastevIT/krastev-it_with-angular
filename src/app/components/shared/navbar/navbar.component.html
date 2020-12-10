@@ -9,6 +9,7 @@
         <a class="btn-nav" routerLink="/skills">Умения</a>
         <a class="btn-nav" routerLink="/lectures">Лекции</a>
         <a class="btn-nav" routerLink="/create-site">Изработка на сайт</a>
+        <a *ngIf="getIsAdmin()" class="btn-nav admin" routerLink="/admin">Админ</a>
     </article>
     <article *ngIf="!getUsername()" class="auth-wrapper">
         <a class="btn-nav" routerLink="/login">Вход</a>

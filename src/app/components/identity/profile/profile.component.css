@@ -7,7 +7,7 @@
 .card-wrapper {
     border: 2px solid #344675;
     box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.2), 0px 3px 4px rgba(0, 0, 0, 0.12), 0px 2px 4px rgb(0 0 0);
-    background: #FBFBFB;
+    background: white;
     border-radius: 10px;
     text-align: center;
     margin: 18px;

@@ -8,6 +8,7 @@ import { environment } from '../../environments/environment';
 })
 export class AuthService {
   urlGuard: string = '';
+  isAdmin = false;
 
   constructor(private http: HttpClient) { }
   private loginPath = environment.apiUrl + 'identity/login'
@@ -59,5 +60,19 @@ export class AuthService {
     let url = this.urlGuard;
     this.urlGuard = '';
     return url;
+  }
+
+  setIsAdmin(isAdmin: boolean) {
+    this.isAdmin = isAdmin;
+    console.log('SET', this.isAdmin);
+  }
+
+  getIsAdmin() {
+    console.log('GET', this.isAdmin);
+    return this.isAdmin;
+  }
+
+  removeIsAdmin() {
+    this.isAdmin = false;
   }
 }

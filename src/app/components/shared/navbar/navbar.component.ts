@@ -1,7 +1,7 @@
 import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { trigger, state, animate, transition, style } from '@angular/animations'
 import { AuthService } from 'src/app/services/auth.service';
-import { FormControl } from '@angular/forms';
+
 
 @Component({
   selector: 'app-navbar',
@@ -18,6 +18,7 @@ export class NavbarComponent implements OnInit {
   isShow: boolean = false;
   isOpen = false;
   userName: any
+  isAdmin = false;
 
   constructor(private authService: AuthService) { }
 
@@ -27,8 +28,13 @@ export class NavbarComponent implements OnInit {
     return this.userName = this.authService.getUsername();
   }
 
+  getIsAdmin() {
+    return this.isAdmin = this.authService.getIsAdmin();
+  }
+
   logout() {
     this.authService.removeToken();
+    this.authService.removeIsAdmin();
   }
 
   showMenu(nav: any, event: any) {

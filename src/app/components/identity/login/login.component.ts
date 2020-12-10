@@ -36,6 +36,7 @@ export class LoginComponent implements OnInit {
       .subscribe(data => {
         this.authService.setToken(data.token);
         this.authService.setUsername(data.username);
+        this.authService.setIsAdmin(data.isAdmin);
 
         navigateUrl
           ? this.router.navigateByUrl(navigateUrl)
