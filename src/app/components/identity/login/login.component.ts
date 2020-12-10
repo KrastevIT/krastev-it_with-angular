@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms'
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
+import { interval } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -9,23 +10,31 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm: FormGroup;
+  loginForm = new FormGroup({
+    username: new FormControl('', [Validators.required]),
+    password: new FormControl('', [Validators.required]),
+  })
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService,
-    private router: Router) {
-    this.loginForm = this.fb.group({
-      'username': [''],
-      'password': ['']
-    })
+  isInvalid = false;
+  intervalId: any;
+
+  constructor(private authService: AuthService, private router: Router) { }
+
+  ngOnDestroy(): void {
+    throw new Error('Method not implemented.');
   }
 
   ngOnInit(): void {
   }
 
-  login() {
+  clearInterval() {
+    if (this.intervalId) {
+      console.log('Interval', this.intervalId);
+      clearInterval(this.intervalId);
+    }
+  }
 
+  login() {
     let navigateUrl = this.authService.getUrlGuard();
 
     this.authService.login(this.loginForm.value)
@@ -37,7 +46,14 @@ export class LoginComponent implements OnInit {
           ? this.router.navigateByUrl(navigateUrl)
           : this.router.navigateByUrl('/home');
       },
-        e => console.log(e));
+        e => {
+          this.isInvalid = true;
+          this.intervalId = setInterval(() => {
+            this.isInvalid = false;
+            this.clearInterval();
+          }, 3000);
+        }
+      );
   }
 
 }
