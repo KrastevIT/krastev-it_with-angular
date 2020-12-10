@@ -1,7 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
-import { interval } from 'rxjs';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -10,26 +9,22 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  loginForm = new FormGroup({
-    username: new FormControl('', [Validators.required]),
-    password: new FormControl('', [Validators.required]),
-  })
+  loginForm: any;
 
   isInvalid = false;
   intervalId: any;
 
   constructor(private authService: AuthService, private router: Router) { }
 
-  ngOnDestroy(): void {
-    throw new Error('Method not implemented.');
-  }
-
   ngOnInit(): void {
+    this.loginForm = new FormGroup({
+      username: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required]),
+    })
   }
 
   clearInterval() {
     if (this.intervalId) {
-      console.log('Interval', this.intervalId);
       clearInterval(this.intervalId);
     }
   }
