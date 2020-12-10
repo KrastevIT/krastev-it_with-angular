@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms'
+import { FormGroup, FormBuilder, FormControl, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
@@ -9,20 +9,24 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup;
+  registerForm: any;
+  isInvalid = false;
+  intervalId: any;
 
-  constructor(
-    private fb: FormBuilder,
-    private authService: AuthService,
-    private router: Router) {
-    this.registerForm = this.fb.group({
-      'username': [''],
-      'email': [''],
-      'password': ['']
+  constructor(private authService: AuthService, private router: Router) { }
+
+  ngOnInit(): void {
+    this.registerForm = new FormGroup({
+      username: new FormControl('', [Validators.required]),
+      email: new FormControl('', [Validators.required]),
+      password: new FormControl('', [Validators.required, Validators.minLength(6)]),
     })
   }
 
-  ngOnInit(): void {
+  clearInterval() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 
   register() {
@@ -34,6 +38,12 @@ export class RegisterComponent implements OnInit {
             this.authService.setUsername(dataLogin.username);
             this.router.navigateByUrl('/');
           });
+      }, e => {
+        this.isInvalid = true;
+        this.intervalId = setInterval(() => {
+          this.isInvalid = false;
+          this.clearInterval();
+        }, 3000);
       });
   }
 

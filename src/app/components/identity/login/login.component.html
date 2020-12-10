@@ -18,7 +18,7 @@
                     <li *ngIf="loginForm.get('password').errors.required">Полето е задължително!</li>
                 </ul>
             </div>
-            <button [disabled]="!loginForm.valid" class="btn" type="submit">Вход</button>
+            <button [disabled]="loginForm.invalid" class="btn" type="submit">Вход</button>
         </form>
     </article>
 </section>
