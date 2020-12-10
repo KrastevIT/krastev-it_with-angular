@@ -62,17 +62,11 @@ export class AuthService {
     return url;
   }
 
-  setIsAdmin(isAdmin: boolean) {
-    this.isAdmin = isAdmin;
-    console.log('SET', this.isAdmin);
+  setIsAdmin(isAdmin: string) {
+    localStorage.setItem('admin', isAdmin);
   }
 
   getIsAdmin() {
-    console.log('GET', this.isAdmin);
-    return this.isAdmin;
-  }
-
-  removeIsAdmin() {
-    this.isAdmin = false;
+    return localStorage.getItem('admin');
   }
 }

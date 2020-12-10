@@ -18,7 +18,6 @@ export class NavbarComponent implements OnInit {
   isShow: boolean = false;
   isOpen = false;
   userName: any
-  isAdmin = false;
 
   constructor(private authService: AuthService) { }
 
@@ -29,12 +28,15 @@ export class NavbarComponent implements OnInit {
   }
 
   getIsAdmin() {
-    return this.isAdmin = this.authService.getIsAdmin();
+    let isAdmin = this.authService.getIsAdmin();
+    if (isAdmin === 'true') {
+      return true;
+    }
+    return false
   }
 
   logout() {
     this.authService.removeToken();
-    this.authService.removeIsAdmin();
   }
 
   showMenu(nav: any, event: any) {
