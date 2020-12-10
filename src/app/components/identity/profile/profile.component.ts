@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -8,33 +8,55 @@ import { AuthService } from 'src/app/services/auth.service';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  profileForm: FormGroup
-  username2 = ''
+  profileForm: any;
+  username;
+  isInvalid = false;
+  intervalId: any;
 
-  constructor(private authService: AuthService, private fb: FormBuilder) {
-    this.profileForm = fb.group({
-      username: new FormControl,
-      password: new FormControl,
-      newPassword: new FormControl,
-      confirmationPassword: new FormControl
-    })
+  isMatchPassword = false;
+
+  constructor(private authService: AuthService, private formBuilder: FormBuilder) {
+    this.username = this.authService.getUsername();
   }
 
+
   ngOnInit(): void {
-    this.profileForm.setValue({
-      username: this.authService.getUsername(),
-      password: '',
-      newPassword: '',
-      confirmationPassword: ''
+    this.profileForm = this.formBuilder.group({
+      username: new FormControl({ value: this.username, disabled: true }),
+      password: new FormControl('', Validators.required),
+      newPassword: new FormControl('', Validators.required),
+      confirmationPassword: new FormControl('', Validators.required)
     })
+
+    this.profileForm.valueChanges.subscribe(() => {
+      this.isMatchPassword = this.profileForm.get('confirmationPassword').value === this.profileForm.get('newPassword').value
+        && this.profileForm.get('confirmationPassword').value !== '';
+    });
+  }
+
+  clearInterval() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+    }
   }
 
   edit() {
-    console.log(this.profileForm.value);
-    this.authService.changeUserPassword(this.profileForm.value)
-    .subscribe(result => {
-      console.log(result);
-    }) 
+    let model = {
+      'username': this.username,
+      'password': this.profileForm.get('password').value,
+      'newPassword': this.profileForm.get('newPassword').value
+    }
+
+    this.authService.changeUserPassword(model)
+      .subscribe(result => {
+        console.log(result);
+      }, e => {
+        this.isInvalid = true;
+        this.intervalId = setInterval(() => {
+          this.isInvalid = false;
+          this.clearInterval();
+        }, 3000);
+      })
   }
 
 }

@@ -1,5 +1,6 @@
 <section class="profile-wrapper">
     <article class="card-wrapper">
+        <div *ngIf="isInvalid" class="alert alert-danger">Невалидни данни!</div>
         <img src="https://image.freepik.com/free-vector/employees-cv-candidates-resume-corporate-workers-students-id-isolate-flat-design-element-job-applications-avatars-personal-information_335657-145.jpg">
         <hr>
         <h3>Потребителски данни</h3>
@@ -19,9 +20,12 @@
             <div class="form-group">
                 <input type="password" formControlName="confirmationPassword" placeholder="Потвърди Паролата">
                 <hr>
+                <div *ngIf="(profileForm.get('confirmationPassword').touched || profileForm.get('confirmationPassword').dirty) && !isMatchPassword" class="alert alert-danger">
+                    Паролите не съвпадат!
+                </div>
             </div>
             <article class="btn-wrapper">
-                <button class="btn" type="submit">Редактирай</button>
+                <button [disabled]="!isMatchPassword" class="btn" type="submit">Редактирай</button>
             </article>
         </form>
     </article>
