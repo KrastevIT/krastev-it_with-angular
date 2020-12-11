@@ -1,0 +1,36 @@
+.basic-title {
+    display: flex;
+    justify-content: center;
+    padding: 60px 50px;
+    text-align: center;
+}
+
+.basic-title .text-wrapper {
+    opacity: 0;
+    margin: 0px 10%;
+}
+
+.basic-title span {
+    color: #ffbd39;
+}
+
+.basic-title h1 {
+    margin: 0;
+    font-size: 38px;
+}
+
+.basic-title p {
+    font-size: 28px;
+    text-align: center;
+}
+
+@media(max-width: 860px) {
+    .basic-title {
+        text-align: center;
+        padding: 60px 0px;
+        margin: 0px 10px;
+    }
+    .basic-title .text-wrapper {
+        margin: 0px;
+    }
+}
