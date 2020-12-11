@@ -22,6 +22,8 @@ import { ExtraHeaderComponent } from './components/landing/home-page/extra-heade
 import { SkillsPageComponent } from './components/landing/skills-page/skills-page.component';
 import { ProfileComponent } from './components/identity/profile/profile.component';
 import { AdminComponent } from './components/identity/admin/admin.component';
+import { QuestionsPageComponent } from './components/identity/admin/questions-page/questions-page.component';
+import { AdminNavbarComponent } from './components/identity/admin/admin-navbar/admin-navbar.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +40,9 @@ import { AdminComponent } from './components/identity/admin/admin.component';
     CreateSiteBenefitComponent,
     CreateSiteFormComponent,
     ProfileComponent,
-    AdminComponent
+    AdminComponent,
+    QuestionsPageComponent,
+    AdminNavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,7 @@ import { AdminComponent } from './components/identity/admin/admin.component';
       { path: 'create-site', component: CreateSitePageComponent },
       { path: 'create-site-form', component: CreateSiteFormComponent, canActivate: [AuthGuardService] },
       { path: 'admin', component: AdminComponent },
+      { path: 'questions', component: QuestionsPageComponent },
     ], { scrollPositionRestoration: 'enabled' },),
     ReactiveFormsModule,
     BrowserAnimationsModule,

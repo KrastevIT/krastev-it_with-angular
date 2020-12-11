@@ -1,0 +1,25 @@
+.questions-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+table {
+    max-width: 60%;
+}
+
+table tr {
+    cursor: pointer;
+}
+
+table td {
+    padding: 20px;
+}
+
+table tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+table tr:hover {
+    background-color: #ddd;
+}
