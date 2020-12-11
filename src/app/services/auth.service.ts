@@ -28,6 +28,11 @@ export class AuthService {
     return this.http.post(this.updateUser, data);
   }
 
+  getUsers() {
+    let username = this.getUsername();
+    return this.http.get(`https://localhost:44326/identity/GetUsers/${username}`);
+  }
+
   isLoggedIn() {
     return this.getToken() ? true : false;
   }

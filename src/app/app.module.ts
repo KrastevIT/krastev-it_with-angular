@@ -24,6 +24,9 @@ import { ProfileComponent } from './components/identity/profile/profile.componen
 import { AdminComponent } from './components/identity/admin/admin.component';
 import { QuestionsPageComponent } from './components/identity/admin/questions-page/questions-page.component';
 import { AdminNavbarComponent } from './components/identity/admin/admin-navbar/admin-navbar.component';
+import { AdminService } from './services/admin.service';
+import { UsersPageComponent } from './components/identity/admin/users-page/users-page.component';
+import { AdminHeaderComponent } from './components/identity/admin/admin-header/admin-header.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,9 @@ import { AdminNavbarComponent } from './components/identity/admin/admin-navbar/a
     ProfileComponent,
     AdminComponent,
     QuestionsPageComponent,
-    AdminNavbarComponent
+    AdminNavbarComponent,
+    UsersPageComponent,
+    AdminHeaderComponent
   ],
   imports: [
     BrowserModule,
@@ -56,13 +61,14 @@ import { AdminNavbarComponent } from './components/identity/admin/admin-navbar/a
       { path: 'create-site', component: CreateSitePageComponent },
       { path: 'create-site-form', component: CreateSiteFormComponent, canActivate: [AuthGuardService] },
       { path: 'admin', component: AdminComponent },
+      { path: 'users', component: UsersPageComponent },
       { path: 'questions', component: QuestionsPageComponent },
-    ], { scrollPositionRestoration: 'enabled' },),
+    ], { scrollPositionRestoration: 'enabled' }),
     ReactiveFormsModule,
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [AuthService, CreateSiteService],
+  providers: [AuthService, CreateSiteService, AdminService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

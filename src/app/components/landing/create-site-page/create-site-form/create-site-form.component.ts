@@ -12,7 +12,7 @@ export class CreateSiteFormComponent implements OnInit {
   createSiteForm: FormGroup;
 
   constructor(
-    private fb: FormBuilder, 
+    private fb: FormBuilder,
     private siteService: CreateSiteService,
     private router: Router) {
     this.createSiteForm = this.fb.group({
@@ -28,10 +28,10 @@ export class CreateSiteFormComponent implements OnInit {
 
   send() {
     this.siteService.post(this.createSiteForm.value)
-    .subscribe(result => {
-      console.log(result);
-      this.router.navigateByUrl('/home');
-    });
+      .subscribe(result => {
+        console.log(result);
+        this.router.navigateByUrl('/home');
+      });
   }
 
 }

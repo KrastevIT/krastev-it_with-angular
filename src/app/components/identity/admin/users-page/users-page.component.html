@@ -1,0 +1,17 @@
+<app-admin-navbar></app-admin-navbar>
+
+<section class="users-wrapper">
+    <table *ngIf="users">
+        <thead>
+            <th>Потребителско име</th>
+            <th>Имейл</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let user of users">
+                <td>{{user.username}}</td>
+                <td>{{user.email}}</td>
+
+            </tr>
+        </tbody>
+    </table>
+</section>

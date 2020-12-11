@@ -1,7 +1,7 @@
 <app-admin-navbar></app-admin-navbar>
 
 <section class="questions-wrapper">
-    <table>
+    <table *ngIf="questions">
         <thead>
             <th>Категория</th>
             <th>Име</th>
@@ -9,23 +9,11 @@
             <th>Структура</th>
         </thead>
         <tbody>
-            <tr>
-                <td>Личен уеб сайт</td>
-                <td>Виктор Иванов</td>
-                <td>виктор@gmail.com</td>
-                <td>Виж повече</td>
-            </tr>
-            <tr>
-                <td>Една страница уеб сайт</td>
-                <td>Пешо Пешов Желязков</td>
-                <td>викто12345р@gmail.com</td>
-                <td>Виж повече</td>
-            </tr>
-            <tr>
-                <td>Друго</td>
-                <td>Виктор</td>
-                <td>виктор@gmail.com</td>
-                <td>Виж повече</td>
+            <tr *ngFor="let question of questions">
+                <td>{{question.category}}</td>
+                <td>{{question.name}}</td>
+                <td>{{question.email}}</td>
+                <td>{{question.description}}</td>
             </tr>
         </tbody>
     </table>
