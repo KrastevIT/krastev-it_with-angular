@@ -23,3 +23,9 @@ table tr:nth-child(even) {
 table tr:hover {
     background-color: #ddd;
 }
+
+@media(max-width: 600px) {
+    .questions-wrapper {
+        justify-content: left;
+    }
+}
