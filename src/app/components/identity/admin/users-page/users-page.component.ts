@@ -15,7 +15,6 @@ export class UsersPageComponent implements OnInit {
     this.authService.getUsers()
     .subscribe(result =>{
       this.users = result;
-      console.log(this.users);
     });
   }
 

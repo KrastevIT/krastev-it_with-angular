@@ -29,7 +29,6 @@ export class CreateSiteFormComponent implements OnInit {
   send() {
     this.siteService.post(this.createSiteForm.value)
       .subscribe(result => {
-        console.log(result);
         this.router.navigateByUrl('/home');
       });
   }

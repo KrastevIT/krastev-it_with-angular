@@ -49,7 +49,6 @@ export class ProfileComponent implements OnInit {
 
     this.authService.changeUserPassword(model)
       .subscribe(result => {
-        console.log(result);
       }, e => {
         this.isInvalid = true;
         this.intervalId = setInterval(() => {

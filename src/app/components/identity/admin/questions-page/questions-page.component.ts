@@ -17,7 +17,6 @@ export class QuestionsPageComponent implements OnInit {
     this.adminService.getGetQuestions(username)
       .subscribe(result => {
         this.questions = result;
-        console.log(this.questions);
       });
   }
 
