@@ -27,6 +27,7 @@ import { AdminNavbarComponent } from './components/identity/admin/admin-navbar/a
 import { AdminService } from './services/admin.service';
 import { UsersPageComponent } from './components/identity/admin/users-page/users-page.component';
 import { AdminHeaderComponent } from './components/identity/admin/admin-header/admin-header.component';
+import { LecturesPageComponent } from './components/landing/lectures-page/lectures-page.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { AdminHeaderComponent } from './components/identity/admin/admin-header/a
     QuestionsPageComponent,
     AdminNavbarComponent,
     UsersPageComponent,
-    AdminHeaderComponent
+    AdminHeaderComponent,
+    LecturesPageComponent
   ],
   imports: [
     BrowserModule,
@@ -55,6 +57,7 @@ import { AdminHeaderComponent } from './components/identity/admin/admin-header/a
       { path: '', component: HomePageComponent },
       { path: 'home', component: HomePageComponent },
       { path: 'skills', component: SkillsPageComponent },
+      { path: 'lectures', component: LecturesPageComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
       { path: 'profile', component: ProfileComponent },
