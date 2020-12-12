@@ -30,6 +30,8 @@ import { AdminHeaderComponent } from './components/identity/admin/admin-header/a
 import { CoursesPageComponent } from './components/landing/courses-page/courses-page.component';
 import { LecturesComponent } from './components/landing/courses-page/lectures/lectures.component';
 import { LectureComponent } from './components/landing/courses-page/lecture/lecture.component';
+import { CourseService } from './services/course.service';
+import { SafePipe } from './pipes/safe.pipe';
 
 @NgModule({
   declarations: [
@@ -54,6 +56,7 @@ import { LectureComponent } from './components/landing/courses-page/lecture/lect
     CoursesPageComponent,
     LecturesComponent,
     LectureComponent,
+    SafePipe,
   ],
   imports: [
     BrowserModule,
@@ -77,7 +80,7 @@ import { LectureComponent } from './components/landing/courses-page/lecture/lect
     BrowserAnimationsModule,
     HttpClientModule
   ],
-  providers: [AuthService, CreateSiteService, AdminService],
+  providers: [AuthService, CreateSiteService, AdminService, CourseService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

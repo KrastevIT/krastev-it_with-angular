@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CourseService } from 'src/app/services/course.service';
 
 @Component({
   selector: 'app-lectures',
@@ -7,13 +8,17 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./lectures.component.css']
 })
 export class LecturesComponent implements OnInit {
-
-  constructor(private route: ActivatedRoute) { }
+  lectures: any
+  constructor(private route: ActivatedRoute, private courseService: CourseService) { }
 
   ngOnInit(): void {
     this.route.params
       .subscribe(result => {
-        console.log(result.id);
+       this.courseService.getLecturesByCourseId(result.id)
+       .subscribe(response => {
+        this.lectures = response;
+       });
+      
       });
   }
 

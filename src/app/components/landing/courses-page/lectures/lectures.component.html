@@ -1,9 +1,5 @@
 <section class="lectures-wrapper">
     <ul>
-        <li routerLink="/lecture/1" class="lecture">Въведение в HTML & CSS</li>
-        <li class="lecture">Въведение в HTML & CSS</li>
-        <li class="lecture">Въведение в HTML & CSS</li>
-        <li class="lecture">Въведение в HTML & CSS</li>
-        <li class="lecture">Въведение в HTML & CSS</li>
+        <li routerLink="/lecture/{{lecture.id}}" *ngFor="let lecture of lectures" class="lecture">{{lecture.name}}</li>
     </ul>
 </section>

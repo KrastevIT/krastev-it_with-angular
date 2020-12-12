@@ -1,1 +1,5 @@
-<p>lecture works!</p>
+<section *ngIf="lecture" class="video-wrapper">
+    <h1>{{lecture.name}}</h1>
+    <iframe width="420" height="345" [src]=" lecture.videoUrl | safe ">
+    </iframe>
+</section>
