@@ -1,0 +1,27 @@
+.lectures-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    text-align: center;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0;
+}
+
+.lectures-wrapper ul .lecture {
+    padding: 20px;
+    background-color: #ddd;
+    margin: 20px;
+    flex-basis: 40%;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+}
+
+.lectures-wrapper ul .lecture:hover {
+    transform: translateY(-3px);
+}

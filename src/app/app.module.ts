@@ -27,7 +27,9 @@ import { AdminNavbarComponent } from './components/identity/admin/admin-navbar/a
 import { AdminService } from './services/admin.service';
 import { UsersPageComponent } from './components/identity/admin/users-page/users-page.component';
 import { AdminHeaderComponent } from './components/identity/admin/admin-header/admin-header.component';
-import { LecturesPageComponent } from './components/landing/lectures-page/lectures-page.component';
+import { CoursesPageComponent } from './components/landing/courses-page/courses-page.component';
+import { LecturesComponent } from './components/landing/courses-page/lectures/lectures.component';
+import { LectureComponent } from './components/landing/courses-page/lecture/lecture.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +51,9 @@ import { LecturesPageComponent } from './components/landing/lectures-page/lectur
     AdminNavbarComponent,
     UsersPageComponent,
     AdminHeaderComponent,
-    LecturesPageComponent
+    CoursesPageComponent,
+    LecturesComponent,
+    LectureComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +61,9 @@ import { LecturesPageComponent } from './components/landing/lectures-page/lectur
       { path: '', component: HomePageComponent },
       { path: 'home', component: HomePageComponent },
       { path: 'skills', component: SkillsPageComponent },
-      { path: 'lectures', component: LecturesPageComponent },
+      { path: 'courses', component: CoursesPageComponent },
+      { path: 'lectures/:id', component: LecturesComponent },
+      { path: 'lecture/:id', component: LectureComponent },
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
       { path: 'profile', component: ProfileComponent },
