@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
 import { ExtraHeaderComponent } from './extra-header/extra-header.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { RouterModule } from '@angular/router';
+import { SkillsPageComponent } from '../landing/skills-page/skills-page.component';
 
 
 @NgModule({
@@ -12,7 +14,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   ],
   imports: [
     CommonModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
   ],
   exports: [
     HeaderComponent,

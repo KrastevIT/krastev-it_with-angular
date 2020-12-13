@@ -18,6 +18,8 @@ import { UsersPageComponent } from './components/identity/admin/users-page/users
 import { AdminHeaderComponent } from './components/identity/admin/admin-header/admin-header.component';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { LandingModule } from './components/landing/landing.module';
+import { HomeModule } from './components/home/home.module';
+import { SkillsPageComponent } from './components/landing/skills-page/skills-page.component';
 
 @NgModule({
   declarations: [
@@ -34,8 +36,10 @@ import { LandingModule } from './components/landing/landing.module';
   ],
   imports: [
     BrowserModule,
+    HomeModule,
     LandingModule,
     RouterModule.forRoot([
+      { path: 'home', loadChildren: () => HomeModule },
       { path: 'landing', loadChildren: () => LandingModule },
      
       { path: 'register', component: RegisterComponent },
