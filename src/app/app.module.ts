@@ -29,12 +29,13 @@ import { LecturesComponent } from './components/landing/courses-page/lectures/le
 import { LectureComponent } from './components/landing/courses-page/lecture/lecture.component';
 import { CourseService } from './services/course.service';
 import { SafePipe } from './pipes/safe.pipe';
-import { SharedModule } from './components/shared/shared.module';
 import { HomeModule } from './components/home/home.module';
+import { NavbarComponent } from './components/shared/navbar/navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    NavbarComponent,
     HomePageComponent,
     SkillsPageComponent,
     RegisterComponent,
@@ -56,7 +57,6 @@ import { HomeModule } from './components/home/home.module';
   ],
   imports: [
     BrowserModule,
-    SharedModule,
     HomeModule,
     RouterModule.forRoot([
       { path: '', component: HomePageComponent },
