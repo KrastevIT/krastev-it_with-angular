@@ -6,6 +6,7 @@ import { CreateSiteFormComponent } from './create-site-form/create-site-form.com
 import { RouterModule } from '@angular/router';
 import { AuthGuardService } from 'src/app/services/auth-guard.service';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 
 
@@ -20,7 +21,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule.forChild([
       { path: 'create-site-form', component: CreateSiteFormComponent, canActivate: [AuthGuardService] },
     ]),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   exports: [
     CreateSiteHeaderComponent,
