@@ -6,8 +6,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HttpClientModule } from '@angular/common/http'
 
 import { AppComponent } from './app.component';
-import { NavbarComponent } from './components/shared/navbar/navbar.component';
-import { HomePageComponent } from './components/landing/home-page/home-page/home-page.component';
+import { HomePageComponent } from './components/landing/home-page/home-page.component';
 import { AuthService } from './services/auth.service';
 import { CreateSitePageComponent } from './components/landing/create-site-page/create-site-page/create-site-page.component';
 import { CreateSiteHeaderComponent } from './components/landing/create-site-page/create-site-header/create-site-header.component';
@@ -17,8 +16,6 @@ import { CreateSiteService } from './services/create-site.service';
 import { AuthGuardService } from './services/auth-guard.service';
 import { RegisterComponent } from './components/identity/register/register.component';
 import { LoginComponent } from './components/identity/login/login.component';
-import { HeaderComponent } from './components/landing/home-page/header/header.component';
-import { ExtraHeaderComponent } from './components/landing/home-page/extra-header/extra-header.component';
 import { SkillsPageComponent } from './components/landing/skills-page/skills-page.component';
 import { ProfileComponent } from './components/identity/profile/profile.component';
 import { AdminComponent } from './components/identity/admin/admin.component';
@@ -32,14 +29,13 @@ import { LecturesComponent } from './components/landing/courses-page/lectures/le
 import { LectureComponent } from './components/landing/courses-page/lecture/lecture.component';
 import { CourseService } from './services/course.service';
 import { SafePipe } from './pipes/safe.pipe';
+import { SharedModule } from './components/shared/shared.module';
+import { HomeModule } from './components/home/home.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomePageComponent,
-    NavbarComponent,
-    HeaderComponent,
-    ExtraHeaderComponent,
     SkillsPageComponent,
     RegisterComponent,
     LoginComponent,
@@ -60,6 +56,8 @@ import { SafePipe } from './pipes/safe.pipe';
   ],
   imports: [
     BrowserModule,
+    SharedModule,
+    HomeModule,
     RouterModule.forRoot([
       { path: '', component: HomePageComponent },
       { path: 'home', component: HomePageComponent },
