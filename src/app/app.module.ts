@@ -25,12 +25,10 @@ import { AdminService } from './services/admin.service';
 import { UsersPageComponent } from './components/identity/admin/users-page/users-page.component';
 import { AdminHeaderComponent } from './components/identity/admin/admin-header/admin-header.component';
 import { CoursesPageComponent } from './components/landing/courses-page/courses-page.component';
-import { LecturesComponent } from './components/landing/courses-page/lectures/lectures.component';
-import { LectureComponent } from './components/landing/courses-page/lecture/lecture.component';
 import { CourseService } from './services/course.service';
-import { SafePipe } from './pipes/safe.pipe';
 import { HomeModule } from './components/home/home.module';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
+import { LecturesModule } from './components/lectures/lectures.module';
 
 @NgModule({
   declarations: [
@@ -51,20 +49,17 @@ import { NavbarComponent } from './components/shared/navbar/navbar.component';
     UsersPageComponent,
     AdminHeaderComponent,
     CoursesPageComponent,
-    LecturesComponent,
-    LectureComponent,
-    SafePipe,
   ],
   imports: [
     BrowserModule,
     HomeModule,
+    LecturesModule,
     RouterModule.forRoot([
       { path: '', component: HomePageComponent },
       { path: 'home', component: HomePageComponent },
       { path: 'skills', component: SkillsPageComponent },
       { path: 'courses', component: CoursesPageComponent },
-      { path: 'lectures/:id', component: LecturesComponent },
-      { path: 'lecture/:id', component: LectureComponent },
+      { path: 'lectures', loadChildren: () => LecturesModule },
       { path: 'register', component: RegisterComponent },
       { path: 'login', component: LoginComponent },
       { path: 'profile', component: ProfileComponent },
