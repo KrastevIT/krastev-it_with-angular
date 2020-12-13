@@ -9,11 +9,7 @@ import { AppComponent } from './app.component';
 import { HomePageComponent } from './components/landing/home-page/home-page.component';
 import { AuthService } from './services/auth.service';
 import { CreateSitePageComponent } from './components/landing/create-site-page/create-site-page/create-site-page.component';
-import { CreateSiteHeaderComponent } from './components/landing/create-site-page/create-site-header/create-site-header.component';
-import { CreateSiteBenefitComponent } from './components/landing/create-site-page/create-site-benefit/create-site-benefit.component';
-import { CreateSiteFormComponent } from './components/landing/create-site-page/create-site-form/create-site-form.component';
 import { CreateSiteService } from './services/create-site.service';
-import { AuthGuardService } from './services/auth-guard.service';
 import { RegisterComponent } from './components/identity/register/register.component';
 import { LoginComponent } from './components/identity/login/login.component';
 import { SkillsPageComponent } from './components/landing/skills-page/skills-page.component';
@@ -29,6 +25,7 @@ import { CourseService } from './services/course.service';
 import { HomeModule } from './components/home/home.module';
 import { NavbarComponent } from './components/shared/navbar/navbar.component';
 import { LecturesModule } from './components/lectures/lectures.module';
+import { SitesModule } from './components/sites/sites.module';
 
 @NgModule({
   declarations: [
@@ -39,9 +36,6 @@ import { LecturesModule } from './components/lectures/lectures.module';
     RegisterComponent,
     LoginComponent,
     CreateSitePageComponent,
-    CreateSiteHeaderComponent,
-    CreateSiteBenefitComponent,
-    CreateSiteFormComponent,
     ProfileComponent,
     AdminComponent,
     QuestionsPageComponent,
@@ -54,6 +48,7 @@ import { LecturesModule } from './components/lectures/lectures.module';
     BrowserModule,
     HomeModule,
     LecturesModule,
+    SitesModule,
     RouterModule.forRoot([
       { path: '', component: HomePageComponent },
       { path: 'home', component: HomePageComponent },
@@ -64,7 +59,7 @@ import { LecturesModule } from './components/lectures/lectures.module';
       { path: 'login', component: LoginComponent },
       { path: 'profile', component: ProfileComponent },
       { path: 'create-site', component: CreateSitePageComponent },
-      { path: 'create-site-form', component: CreateSiteFormComponent, canActivate: [AuthGuardService] },
+      { path: 'sites', loadChildren: () => SitesModule },
       { path: 'admin', component: AdminComponent },
       { path: 'users', component: UsersPageComponent },
       { path: 'questions', component: QuestionsPageComponent },
